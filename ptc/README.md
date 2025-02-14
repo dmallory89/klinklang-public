@@ -48,6 +48,7 @@ mailserver:
   port: '25'
 export:
    rate: 3600
+   use_immediately: false
    destination: DRAGONITE
    discord: false
    webhook: 'https://my-discord-webhook-url'
@@ -74,6 +75,7 @@ export:
    - `host`: the host inside the container on which the mailserver should listen
 4. `exporter`: Configuration for the service, which exports all accounts to either Dragonite or RDM. if not given the service is disabled
    - `rate`: the rate at which the exporter should export the accounts
+   - `use_immediately`: if set to true, accounts are exported with last_released = 1 and will be immediately available for use in Dragonite. 
    - `destination`: the destination of the accounts, either `DRAGONITE` or `RDM`
    - `discord`: if set to true the exporter will send a message to a discord webhook
    - `webhook`: the discord webhook to which the exporter should send the message

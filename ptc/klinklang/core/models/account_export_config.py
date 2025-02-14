@@ -15,6 +15,9 @@ class AccountExportConfig(BaseModel):
     rate : int
         The rate in seconds at which accounts are exported.
         default: 3600
+    use_immediately: bool
+        If set to true, accounts are exported with last_released = 1 and will be immediately available for use in Dragonite
+        default: False
     destination : Literal["DRAGONITE", "RDM"]
         The destination table of the accounts, either DRAGONITE or RDM.
     discord : bool
@@ -37,6 +40,7 @@ class AccountExportConfig(BaseModel):
         default: 3306
     """
     rate: int = 3600
+    use_immediately: bool = False
     destination: Literal["DRAGONITE", "RDM"]
     discord: bool = False
     webhook: str = None

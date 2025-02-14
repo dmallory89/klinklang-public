@@ -169,6 +169,8 @@ def generate_account(
         "dob_month": month_,
         "dob_day": day_,
         "region": region,
+        "created": int(time.time()),
+        "exported": False
     }
     return account
 
