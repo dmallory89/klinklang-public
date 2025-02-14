@@ -46,7 +46,7 @@ mailreader:
     username: test
 mailserver:
   port: '25'
-exporter:
+export:
    rate: 3600
    destination: DRAGONITE
    discord: false
